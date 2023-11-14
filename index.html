@@ -6,25 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- facebook 分享 meta 内容 -->
     <!-- 分享测试工具 https://developers.facebook.com/tools/debug/ -->
-    <meta content="标题！" property="og:title">
+    <meta content="标题" property="og:title">
     <meta content="描述" property="og:description">
-    <meta content="站点名字！" property="og:site_name">
+    <meta content="站点名字" property="og:site_name">
     <meta content="article" property="og:type">
     <meta content="" property="og:url">
     <meta content="500" property="og:image:height">
     <meta content="500" property="og:image:width">
     <meta content="https://tailwindcss.com/_next/static/media/social-card-large.a6e71726.jpg" property="og:image">
     <meta content="ja_jp" property="og:locale">
+    
+    <!-- twitter 分享 meta 内容 -->
+    <meta content="summary_large_image" name="twitter:card">
+    <meta content="标题" name="twitter:title">
+    <meta content="描述" name="twitter:description">
+    <meta content="https://tailwindcss.com/_next/static/media/social-card-large.a6e71726.jpg" name="twitter:image">
+    
     <title>测试分享到 facebook</title>
 </head>
 <body>
     <button id="fb">分享到 facebook</button>
+    <button id="tw">分享到 twitter</button>
     <script>
         const fbShareBtn = document.getElementById('fb')
         fbShareBtn.addEventListener('click', () => {
             const url = encodeURIComponent('https://shenzhongchaoii.github.io/')
             const facebook = `https://www.facebook.com/sharer/sharer.php?u=${url}`
             window.open(facebook, '_blank')
+        })
+
+        const twShareBtn = document.getElementById('tw')
+        twShareBtn.addEventListener('click', () => {
+            const content = '内容'
+            const url = encodeURIComponent('https://shenzhongchaoii.github.io/')
+            const text = `${content} ${url}&via=${via}`
+            // 分享后会显示 “via @张三”
+            const via = '张三'
+            // 拼接链接
+            const twitter = `https://twitter.com/intent/tweet?text=${text}`
+            window.open(twitter, '_blank')
         })
     </script>
 </body>
