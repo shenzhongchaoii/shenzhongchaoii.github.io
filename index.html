@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- facebook 分享 meta 内容 -->
+    <!-- 分享测试工具 https://developers.facebook.com/tools/debug/ -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="标题标题">
+    <meta property="og:description" content="描述">
+    <meta name="description" content="描述">
+    <meta property="og:url" content="http://szc.163.com:8080/123">
+    <meta property="og:image" content="http://szc.163.com:8080/share.png">
+    <meta property="og:width" content="600">
+    <meta property="og:height" content="600">
+    <meta property="og:app_id" content="650841317216092">
+    <title>测试分享到 facebook</title>
+</head>
+<body>
+    <button id="fb">分享到 facebook</button>
+    <script>
+        const fbShareBtn = document.getElementById('fb')
+        fbShareBtn.addEventListener('click', () => {
+            const url = encodeURIComponent('http://szc.163.com:8080/')
+            const facebook = `https://www.facebook.com/sharer/sharer.php?u=${url}`
+            window.open(facebook, '_blank')
+        })
+    </script>
+</body>
+</html>
