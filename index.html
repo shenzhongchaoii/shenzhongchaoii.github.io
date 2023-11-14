@@ -39,9 +39,9 @@
         twShareBtn.addEventListener('click', () => {
             const content = '内容'
             const url = encodeURIComponent('https://shenzhongchaoii.github.io/')
-            const text = `${content} ${url}&via=${via}`
             // 分享后会显示 “via @张三”
             const via = '张三'
+            const text = `${content} ${url}&via=${via}`
             // 拼接链接
             const twitter = `https://twitter.com/intent/tweet?text=${text}`
             window.open(twitter, '_blank')
