@@ -34,6 +34,13 @@
     <button id="fb">分享到 facebook</button>
     <button id="tw">分享到 twitter</button>
     <script>
+        if (location.search) {
+            if (location.search.includes('zh_TW')) {
+                setPageConfig('zh_TW')
+            } else {
+                setPageConfig('zh_CN')
+            }
+        }
         const config = {
             zh_CN: {
                 title: '测试分享',
@@ -87,7 +94,6 @@
                 'twitter:card',
                 'twitter:description',
                 'twitter:image',
-                'og:title',
                 'og:title',
                 'og:description',
                 'og:image',
