@@ -34,15 +34,10 @@
     <button id="fb">分享到 facebook</button>
     <button id="tw">分享到 twitter</button>
     <script>
-        if (location.search) {
-            if (location.search.includes('zh_TW')) {
-                setPageConfig('zh_TW')
-            } else {
-                setPageConfig('zh_CN')
-            }
-        }
         const config = {
             zh_CN: {
+                zh_CN: '简体中文',
+                zh_TW: '繁体中文',
                 title: '测试分享',
                 keywords: '关键词',
                 description: '描述',
@@ -64,6 +59,8 @@
                 'og:locale': 'zh_cn',
             },
             zh_TW: {
+                zh_CN: '簡體中文',
+                zh_TW: '繁體中文',
                 title: '測試分享',
                 keywords: '關鍵詞',
                 description: '描述',
@@ -118,23 +115,33 @@
         }
 
         const zhCNBtn = document.getElementById('zh_CN')
+        const zhTWBtn = document.getElementById('zh_TW')
+        const fbShareBtn = document.getElementById('fb')
+        const twShareBtn = document.getElementById('tw')
+
+        if (location.search) {
+            if (location.search.includes('zh_TW')) {
+                zhCNBtn.innerText = config.zh_TW.zh_CN
+                zhTWBtn.innerText = config.zh_TW.zh_TW
+                setPageConfig('zh_TW')
+            } else {
+                zhCNBtn.innerText = config.zh_CN.zh_CN
+                zhTWBtn.innerText = config.zh_CN.zh_TW
+                setPageConfig('zh_CN')
+            }
+        }
+
         zhCNBtn.addEventListener('click', () => {
             setPageConfig('zh_CN')
         })
-
-        const zhTWBtn = document.getElementById('zh_TW')
         zhTWBtn.addEventListener('click', () => {
             setPageConfig('zh_TW')
         })
-
-        const fbShareBtn = document.getElementById('fb')
         fbShareBtn.addEventListener('click', () => {
             const url = encodeURIComponent('https://shenzhongchaoii.github.io/')
             const facebook = `https://www.facebook.com/sharer/sharer.php?u=${url}`
             window.open(facebook, '_blank')
         })
-
-        const twShareBtn = document.getElementById('tw')
         twShareBtn.addEventListener('click', () => {
             const content = '内容'
             const url = encodeURIComponent('https://shenzhongchaoii.github.io/')
