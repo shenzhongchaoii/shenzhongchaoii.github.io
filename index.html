@@ -28,6 +28,7 @@
 <body>
     <button id="fb">分享到 facebook</button>
     <button id="tw">分享到 twitter</button>
+    <button id="line">分享到 line</button>
     <script>
         const fbShareBtn = document.getElementById('fb')
         fbShareBtn.addEventListener('click', () => {
@@ -45,6 +46,17 @@
             // 拼接链接
             const twitter = `https://twitter.com/intent/tweet?text=${text}`
             window.open(twitter, '_blank')
+        })
+        const lineShareBtn = document.getElementById('line')
+        //桌機
+        // "https://lineit.line.me/share/ui?url="+ encodeURIComponent("分享的網址")
+        
+        //手機
+        // "line://msg/text/"+ encodeURIComponent("分享的網址")
+        lineShareBtn.addEventListener('click', () => {
+            const url = encodeURIComponent('https://shenzhongchaoii.github.io/')
+            const line = `https://lineit.line.me/share/ui?url=${url}`
+            window.open(line, '_blank')
         })
     </script>
 </body>
