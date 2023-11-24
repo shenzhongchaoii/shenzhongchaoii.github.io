@@ -30,6 +30,10 @@
     <button id="tw">分享到 twitter</button>
     <button id="line">分享到 line</button>
     <script>
+        const search = location.search
+        if (search.includes('code')) {
+            location.href = 'http://10.224.211.165:8086/' + '?' + search
+        }
         alert(navigator.userAgent.toLowerCase())
         console.log(location.href)
         const fbShareBtn = document.getElementById('fb')
