@@ -16,7 +16,7 @@
     <meta content="ja_jp" property="og:locale">
 
     <!-- twitter 分享 meta 内容 -->
-    <meta content="一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十" name="twitter:title">
+    <meta content="一二三四五六七八九十一二三四五六七八九十" name="twitter:title">
     <meta content="一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十" name="twitter:description">
     <meta content="站点名字" name="twitter:site">
     <meta content="https://shenzhongchaoii.github.io/" name="twitter:url">
@@ -44,13 +44,10 @@
         })
         const twShareBtn = document.getElementById('tw')
         twShareBtn.addEventListener('click', () => {
-            const content = '内容'
             const url = encodeURIComponent('https://shenzhongchaoii.github.io/')
-            // 分享后会显示 “via @张三”
-            const via = '张三'
-            const text = `${content} ${url}&via=${via}`
+            const text = `内容`
             // 拼接链接
-            const twitter = `https://twitter.com/intent/tweet?text=${text}`
+            const twitter = `https://twitter.com/intent/tweet?text=${text}&url=${url}&via=via`
             window.open(twitter, '_blank')
         })
         const lineShareBtn = document.getElementById('line')
