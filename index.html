@@ -45,9 +45,9 @@
         const twShareBtn = document.getElementById('tw')
         twShareBtn.addEventListener('click', () => {
             const url = encodeURIComponent('https://shenzhongchaoii.github.io/')
-            const text = `内容`
+            const text = `share_content\r\n`
             // 拼接链接
-            const twitter = `https://twitter.com/intent/tweet?text=${text}&url=${url}&via=via`
+            const twitter = `https://twitter.com/intent/tweet?text=${text}&url=${url}`
             window.open(twitter, '_blank')
         })
         const lineShareBtn = document.getElementById('line')
