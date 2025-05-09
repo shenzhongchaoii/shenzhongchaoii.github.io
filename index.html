@@ -27,8 +27,10 @@
 <body>
     <button id="fb">分享到 facebook</button>
     <button id="tw">分享到 twitter</button>
-    <button id="line">分享到 line</button>>
+    <button id="line">分享到 line</button>
     <button id="ig">ig授权</button>
+
+    <button id="toTestApplink">唤起 TestApp </button>
     <script>
         const search = location.search
         if (search.includes('code')) {
@@ -68,6 +70,11 @@
             // window.open(line, '_blank')
             const redirect_uri = `https://shenzhongchaoii.github.io/?source_uri=${encodeURIComponent(window.location.href)}`
             window.location.href = `https://api.instagram.com/oauth/authorize?client_id=364807599916353&redirect_uri=${redirect_uri}&scope=user_profile&response_type=code`
+        })
+
+        const toBtn = document.getElementById("toTestApplink")
+        toBtn.addEventListener('click', () => {
+            window.location.href = "https://shenzhongchaoii.github.io/applink/index.html"
         })
     </script>
 </body>
